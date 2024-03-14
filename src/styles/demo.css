@@ -1,14 +1,15 @@
-.content-wrapper{
+/* .content-wrapper{
     padding: 0 500px
-}
+} */
 
 .contact-wrapper{
     display: grid;
-    grid-template-columns: 2fr 5fr 1fr;
-    border-radius: 10px;
+    /* grid-template-columns: 2fr 5fr 1fr; */
+    grid-template-columns: 1fr 5fr 1fr;
+    /* border-radius: 10px;
     border:none !important;
     box-shadow: 0 2px 10px rgb(0, 0, 0);
-    background-color:#F0F0F0
+    background-color:#F0F0F0 */
 }
 
 .avatar { 
@@ -16,10 +17,13 @@
     width: 150px;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    border: .3rem solid rgb(0, 0, 0);
+    justify-content: center; */
+    /* border: .3rem solid rgb(0, 0, 0); */
+    border:none;
+    background-image: url('https://images.ecestaticos.com/XBt9G5umGpid8S2dgQk2G5jGUow=/119x0:2001x1412/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F848%2Ff70%2F0d5%2F848f700d5a15920f020496a616af873a.jpg');
+    background-size: cover;
 }
 
 .avatar > .svg {/*In case we want to add in the future the opcion of selecting type of background*/

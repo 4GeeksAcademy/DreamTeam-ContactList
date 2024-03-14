@@ -2,6 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { IoPersonSharp } from "react-icons/io5"
+import { IoLocationSharp } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaTrashCan } from "react-icons/fa6";
+import { FaPencilAlt } from "react-icons/fa";
 import "../../styles/demo.css";
 
 
@@ -42,20 +47,21 @@ export const AgendaInfo = () => {
 				{
 					store.eachContact.map((contact) => {
 						return (
-							<div key={contact.id} className="border contact-wrapper mb-4" style={{ padding: '2rem', }}>
-								<div className="avatar" style={{ backgroundColor: getRandomColor() }}>{contact.full_name !== "" ? <span className="avatar-letters">{getInitials(contact.full_name)}</span> : <IoPersonSharp className="svg" />}</div>
+							<div key={contact.id} className="border contact-wrapper" style={{ padding: '2rem', }}>
+								{/* <div className="avatar" style={{ backgroundColor: getRandomColor() }}>{contact.full_name !== "" ? <span className="avatar-letters">{getInitials(contact.full_name)}</span> : <IoPersonSharp className="svg" />}</div> */}
+								<div className="avatar"></div>
 								<div className="ps-2">
 									<h1 className="mb-2">{contact.full_name}</h1>
-									<p className="mb-2">📍{contact.address}</p>
-									<p className="mb-2">📱{contact.phone}</p>
-									<p className="mb-2">📧{contact.email}</p>
+									<p className="mb-2" style={{ color: "#72797f" }}><IoLocationSharp className="me-2" style={{ color: "#72797f" }} />{contact.address}</p>
+									<p className="mb-2" style={{ color: "#72797f" }}><FaPhone className="me-2" style={{ color: "#72797f" }} />{contact.phone}</p>
+									<p className="mb-2" style={{ color: "#72797f" }}><MdEmail className="me-2" style={{ color: "#72797f" }} />{contact.email}</p>
 								</div>
 								<div className="text-end">
-									<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => actions.getContactInfo(contact.id)} style={{ border: 'none', backgroundColor: '#F0F0F0' }}>
-										<ion-icon name="pencil-outline" style={{ fontSize: "20px", background: "#F0F0F0" }}></ion-icon>
+									<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => actions.getContactInfo(contact.id)} style={{ border: 'none', backgroundColor: 'white' }}>
+										<FaPencilAlt name="pencil-outline" style={{ fontSize: "20px", background: "white" }} />
 									</button>
-									<button onClick={() => actions.getContactInfo(contact.id)} style={{ border: 'none', backgroundColor: '#F0F0F0' }} type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
-										<ion-icon name="trash-outline" style={{ fontSize: "20px", background: "#F0F0F0" }}></ion-icon>
+									<button onClick={() => actions.getContactInfo(contact.id)} style={{ border: 'none', backgroundColor: 'white' }} type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
+										<FaTrashCan name="trash-outline" style={{ fontSize: "20px", background: "white" }} />
 									</button>
 								</div>
 							</div>
